@@ -1,3 +1,5 @@
+﻿ SetProcessDpiAwareness(PROCESS_PER_MONITOR_DPI_AWARE); // Call it at the beginning of DllMain
+
 BOOL WINAPI HookedBitBlt(
     HDC   hdc,
     int   x,
@@ -8,10 +10,7 @@ BOOL WINAPI HookedBitBlt(
     int   x1,
     int   y1,
     DWORD rop
-) {
-
-    SetProcessDpiAwareness(PROCESS_PER_MONITOR_DPI_AWARE);
-    
+) {    
     LOG(DEBUG) << "x -> " << x;
     LOG(DEBUG) << "y -> " << y;
     LOG(DEBUG) << "cx -> " << cx;
