@@ -30,9 +30,9 @@ BOOL WINAPI HookedBitBlt(
         else {
             hBitmap = (HBITMAP)LoadImageA(NULL, (std::filesystem::path(DllPath).parent_path().string() + + "\\1920_1080.bmp").c_str(), IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
         }
-        if (!hBitmap) { // 都没有
+        if (!hBitmap) { 
             LOG(ERROR) << "LoadImage fail";
-            return false;   // 黑色屏幕
+            return false;   
         }
         HWND win = GetDesktopWindow();
         HDC dc = GetDC(win);
